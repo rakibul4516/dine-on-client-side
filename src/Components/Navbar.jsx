@@ -14,10 +14,8 @@ const Navbar = () => {
     const navitems = <>
         <div className="flex md:flex-row flex-col lg:gap-3 md:gap-1 max-sm:gap-2 items-center  font-semibold">
             <NavLink to='/' className='activeclass py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Home</NavLink>
-            <NavLink to='/addproduct' className='activeclass py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Add Product</NavLink>
-            <NavLink to='/mycart' className='activeclass py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>My Cart</NavLink>
-            <NavLink to='/contact' className='activeclass py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Contact</NavLink>
-
+            <NavLink to='/addproduct' className='activeclass py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'> All Food Items</NavLink>
+            <NavLink to='/mycart' className='activeclass py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Blogs</NavLink>
         </div>
     </>
 
