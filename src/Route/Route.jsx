@@ -5,31 +5,83 @@ import App from "../App";
 import RootAuth from "../Pages/Authentication/RootAuth";
 import SignUp from "../Pages/Authentication/SignUp";
 import SignIn from "../Pages/Authentication/SignIn";
+import AllFoods from "../Pages/AllFoods";
+import MyAddedFoods from "../Pages/MyAddedFoods";
+import AddFoodItem from "../Pages/AddFoodItem";
+import MyOrders from "../Pages/MyOrders";
+import ProtectedRoute from "../Components/ProtectedRoute";
+import UpdateFoods from "../Pages/UpdateFoods";
+import FoodDetails from "../Components/FoodDetails";
+import PurcheseFood from "../Components/PurcheseFood";
+import ErrorElement from "../Components/ErrorElement";
 
 const Route = createBrowserRouter([
     {
         path: '/',
-        element: <App/>,
+        element: <App />,
+        errorElement: <ErrorElement />,
         children: [
             {
                 path: '/',
                 element: <Home />,
             },
             {
+                path: 'allfoods',
+                element: <AllFoods />,
+                loader: () => fetch('http://localhost:5000/api/v1/countdata')
+            },
+            {
                 path: 'blogs',
                 element: <Blogs />,
             },
             {
-                path:'/',
-                element:<RootAuth/>,
-                children:[
+                path: 'myaddedfood',
+                element: <ProtectedRoute>
+                    <MyAddedFoods />
+                </ProtectedRoute>,
+            },
+            {
+                path: 'addfooditem',
+                element: <ProtectedRoute>
+                    <AddFoodItem />
+                </ProtectedRoute>,
+            },
+            {
+                path: 'myorders',
+                element: <ProtectedRoute>
+                    <MyOrders />
+                </ProtectedRoute>,
+            },
+            {
+                path: 'purchese/:id',
+                element: <ProtectedRoute>
+                    <PurcheseFood />
+                </ProtectedRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/allfoods/${params.id}`)
+            },
+            {
+                path: 'edit/:id',
+                element: <ProtectedRoute>
+                    <UpdateFoods />
+                </ProtectedRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/allfoods/${params.id}`)
+            },
+            {
+                path: 'details/:id',
+                element: <FoodDetails />,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/allfoods/${params.id}`)
+            },
+            {
+                path: '/',
+                element: <RootAuth />,
+                children: [
                     {
-                        path:'signin',
-                        element: <SignIn/>
+                        path: 'signin',
+                        element: <SignIn />
                     },
                     {
-                        path:'signup',
-                        element: <SignUp/>
+                        path: 'signup',
+                        element: <SignUp />
                     },
                 ]
             }

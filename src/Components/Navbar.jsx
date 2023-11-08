@@ -13,9 +13,9 @@ const Navbar = () => {
 
     const navitems = <>
         <div className="flex md:flex-row flex-col lg:gap-3 md:gap-1 max-sm:gap-2 items-center  font-semibold">
-            <NavLink to='/' className='activeclass py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Home</NavLink>
-            <NavLink to='/addproduct' className='activeclass py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'> All Food Items</NavLink>
-            <NavLink to='/mycart' className='activeclass py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Blogs</NavLink>
+            <NavLink to='/' className='activeclass py-2 lg:px-4 px-2 hover:hover:bg-orange-300 text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Home</NavLink>
+            <NavLink to='allfoods' className='activeclass py-2 lg:px-4 px-2 hover:hover:bg-orange-300 text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'> All Food Items</NavLink>
+            <NavLink to='blogs' className='activeclass py-2 lg:px-4 px-2 hover:hover:bg-orange-300 text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Blogs</NavLink>
         </div>
     </>
 
@@ -28,13 +28,14 @@ const Navbar = () => {
 
 
     return (
-        <nav className="shadow dark:bg-gray-900  relative">
+        <nav className="shadow dark:bg-gray-900 bg-transparent  relative">
             <div className="w-full flex flex-wrap items-center justify-between mx-auto p-4">
                 <div className="flex items-center">
-                    <img src="https://i.ibb.co/qM3gzbM/image-removebg-preview-5.png" alt="" className='h-16 w-16' />
+                    {/* <img src="https://i.ibb.co/qM3gzbM/image-removebg-preview-5.png" alt="" className='h-16 w-16' /> */}
+                    <h1 className="text-2xl font-bold dark:text-white">DineOn</h1>
                 </div>
 
-                <div className="flex items-center md:order-2 gap-4">
+                <div className="flex items-center md:order-2 gap-4 ">
                     {theme === 'light' ? <HiMoon className='text-4xl cursor-pointer' onClick={() => { setTheme('dark'); localStorage.setItem('theme', 'dark') }} /> : <HiSun className='text-4xl cursor-pointer text-white' onClick={() => { setTheme('light'); localStorage.setItem('theme', 'light') }} />}
 
                     {
@@ -51,22 +52,21 @@ const Navbar = () => {
                             </button>
                             <div
                                 className={`${isDropdown ? 'block' : 'hidden'
-                                    } z-50 my-4 text-base list-none bg-[#f5dede] divide-y absolute right-10 top-16`}
+                                    } z-50 my-4 text-base list-none bg-orange-50 rounded-md divide-y absolute right-10 top-16`}
 
                             >
                                 <div className="px-4 py-3">
-                                    <span className="block text-sm text-gray-900 ">
-                                        {users?.displayName ? users?.displayName : 'User Name'}
-                                    </span>
-                                    <span className="block text-sm text-gray-700 truncate dark:text-gray-700">
-                                        {users?.email}
-                                    </span>
+                                    <ul className="flex flex-col">
+                                        <NavLink to='myaddedfood' className="hover:bg-orange-300 dark:text-white text-lg font-semibold px-3 py-2 rounded-md">My added food items</NavLink>
+                                        <NavLink to='addfooditem' className="hover:bg-orange-300 dark:text-white text-lg font-semibold px-3 py-2 rounded-md">Add a food item</NavLink>
+                                        <NavLink to='myorders' className="hover:bg-orange-300 dark:text-white text-lg font-semibold px-3 py-2 rounded-md">My ordered food items</NavLink>
+                                    </ul>
                                 </div>
                                 <ul className="py-2">
                                     <li>
                                         <a onClick={HandelLogout}
                                             href="#"
-                                            className="py-2 lg:px-4 px-2 hover:bg-[#E527B2] text-md font-semibold text-black rounded-lg w-full"
+                                            className="py-2 lg:px-4 px-2 hover:bg-orange-300 text-md font-semibold text-black rounded-lg w-full"
                                         >
                                             Sign out
                                         </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
                                 </ul>
                             </div>
                         </div>
-                            : <NavLink to='/signin' className='activeclass py-2 lg:px-4 px-2 dark:text-white hover:bg-[#E527B2] text-md font-semibold text-black rounded-lg bg-transparent'>Login</NavLink>
+                            : <NavLink to='/signin' className='activeclass py-2 lg:px-4 px-2 dark:text-white hover:bg-orange-600 text-md font-semibold text-black rounded-lg bg-transparent'>Login</NavLink>
 
                     }
                     {/* small Dropdown menu */}
