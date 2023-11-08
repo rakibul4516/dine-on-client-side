@@ -8,7 +8,7 @@ const RootAuth = () => {
             <div className="container flex items-center lg:justify-end justify-center min-h-screen px-6 mx-auto">
                 <div className="w-full max-w-md">
                     <div className="flex justify-center mx-auto">
-                        <h2 className="w-auto h-7 sm:h-8 font-bold text-xl">DineOn</h2>
+                        <img src="https://i.ibb.co/6WY9fg4/logo.png" alt="logo" className="h-14 w-18" />
                     </div>
 
                     <div className="flex items-center justify-center mt-6">

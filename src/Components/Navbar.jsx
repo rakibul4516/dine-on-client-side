@@ -31,8 +31,7 @@ const Navbar = () => {
         <nav className="shadow dark:bg-gray-900 bg-transparent  relative">
             <div className="w-full flex flex-wrap items-center justify-between mx-auto p-4">
                 <div className="flex items-center">
-                    {/* <img src="https://i.ibb.co/qM3gzbM/image-removebg-preview-5.png" alt="" className='h-16 w-16' /> */}
-                    <h1 className="text-2xl font-bold dark:text-white">DineOn</h1>
+                    <img src="https://i.ibb.co/6WY9fg4/logo.png" alt="" className='h-16 w-20' />
                 </div>
 
                 <div className="flex items-center md:order-2 gap-4 ">

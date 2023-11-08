@@ -4,14 +4,15 @@ import auth from "../../firebase.config";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
-import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import AxiosData from "../../Axios/AxiosData";
 
 
 const SignUp = () => {
+    const axios = AxiosData()
     const { signupUser } = useContext(AuthContext)
     const [error, setError] = useState('')
     const location = useLocation()
@@ -49,17 +50,16 @@ const SignUp = () => {
                     photoURL: image
                 })
                 if (res?.user?.email) {
+                    //Post user data in database
+                    axios.post("/users", user)
+                        .then(() => {
+                            toast('Success')
+                        })
                     Swal.fire({
                         icon: "success",
                         title: "Successfully Sign Up",
                     });
                 }
-            })
-
-        //Post user data in database
-        axios.post("/users", user)
-            .then(() => {
-                toast('Success')
             })
     }
     return (

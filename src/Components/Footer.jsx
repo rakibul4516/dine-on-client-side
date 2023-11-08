@@ -6,8 +6,7 @@ const Footer = () => {
             <div className="container px-6 py-8 mx-auto">
                 <div className="flex flex-col items-center text-center">
                     <a href="#">
-                        {/* <img className="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt="" /> */}
-                        <h1 className="text-2xl font-bold">DineOn</h1>
+                        <img className="w-auto h-20" src="https://i.ibb.co/6WY9fg4/logo.png" alt="" />
                     </a>
 
                     <div className="flex flex-wrap justify-center mt-6 -mx-4">
