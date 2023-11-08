@@ -9,7 +9,7 @@ const PurcheseFood = () => {
     const foodItem = useLoaderData()
     const email = auth.currentUser.email;
     const user = auth.currentUser.displayName;
-    const { _id, foodName, image, category, quantity, price, origin, desc, userName,userEmail,orders  } = foodItem || {}
+    const { _id, foodName, image, category, quantity, price, origin, desc,userEmail,orders  } = foodItem || {}
     //Purchese food
     const handlePurcheseData = (e) => {
         e.preventDefault()

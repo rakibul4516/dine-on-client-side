@@ -82,7 +82,7 @@ const MyOrders = () => {
 
                                 </>)
                             }
-                        </table > : <Lottie className=" flex justify-center mx-auto" animationData={NoData} loop={true} />
+                        </table > : <Lottie className=" flex justify-center h-[100vh] mx-auto" animationData={NoData} loop={true} />
                     }
 
                     <ToastContainer

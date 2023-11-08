@@ -10,7 +10,7 @@ const AllFoods = () => {
     const [foods, setFoods] = useState()
     const [currentPage, setCurrentPage] = useState(0)
     const [search, setSearch] = useState('');
-
+    const [catagory, setCategory] = ('')
     //Pagination 
     const { count } = useLoaderData()
     const limit = 9;
@@ -31,19 +31,21 @@ const AllFoods = () => {
     }
     //Fetch data 
     useEffect(() => {
-        axios.get(`/allfoods?search=${search}&page=${currentPage}&limit=${limit}`)
+        axios.get(`/allfoods?search=${search}&page=${currentPage}&limit=${limit}&category=${catagory}`)
             .then((res) => {
                 setFoods(res.data);
             })
     }, [currentPage, search, axios])
+
+    //find by catagory
 
     return (
         <div>
             <Helmet>
                 <title>DineOn | All food menu</title>
             </Helmet>
-            <div className="">
-                <div className="w-10/12 mx-auto py-10">
+            <div className="flex w-10/12 mx-auto py-10 justify-between items-center">
+                <div className="">
                     <fieldset className="w-full space-y-1 dark:text-gray-100">
                         <label className="hidden">Search</label>
                         <div className="relative">
@@ -56,6 +58,18 @@ const AllFoods = () => {
                             bg-slate-100 focus:dark:border-violet-400" />
                         </div>
                     </fieldset>
+                </div>
+                <div>
+                    <select onChange={(e) => setCategory(e.target.value)} name="category" className=" block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                        <option disabled selected>Select your food category</option>
+                        <option value="pizza">Pizza</option>
+                        <option value="Pasta">Pasta</option>
+                        <option value="Burgers">Barger</option>
+                        <option value="Sandwiches">Sandwiches</option>
+                        <option value="Steak">Steak</option>
+                        <option value="Seafood">Seafood</option>
+                        <option value="Salads">Salads</option>
+                    </select>
                 </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 w-11/12 mx-auto py-5">

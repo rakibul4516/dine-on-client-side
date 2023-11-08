@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FcGlobe, } from "react-icons/fc";
 const FoodCards = ({ data }) => {
     const { _id, foodName, image, category, quantity, price, origin } = data || {}
+
     return (
         <div className="w-full overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
             <img className="object-cover object-center w-full h-56" src={image} alt="avatar" />
@@ -26,7 +27,6 @@ const FoodCards = ({ data }) => {
                 <h2 className="text-lg font-semibold text-gray-800 dark:text-white">Qty: {quantity}</h2>
                 <Link to={`/details/${_id}`} className="px-3 py-2 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-orange-400 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Details</Link>
             </div>
-
         </div>
     );
 };
