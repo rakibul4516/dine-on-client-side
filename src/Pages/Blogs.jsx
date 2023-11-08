@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 
 const Blogs = () => {
     return (
-        <div className="w-9/12 mx-auto py-10">
+        <div className="w-9/12 mx-auto py-10 dark:text-slate-50">
             <Helmet>
                 <title>Blogs page</title>
             </Helmet>
