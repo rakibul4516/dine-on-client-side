@@ -37,51 +37,54 @@ const MyOrders = () => {
     return (
         <div>
             <Helmet>
-                <title>My orders</title>
+                <title>DineOn | My orders</title>
             </Helmet>
             <div className="py-10">
                 <div className="w-9/12 mx-auto">
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <HiXCircle />
-                                </th>
-                                <th>Food Name</th>
-                                <th>Price</th>
-                                <th>Buyer</th>
-                                <th>date</th>
-                            </tr>
-                        </thead>
-                        {
-                            (orders.length > 0) ? orders?.map(food => <>
-                                {/* head */}
-                                <tbody>
-                                    {/* row 1 */}
-                                    <tr>
-                                        <th>
-                                            <HiXCircle className="text-lg font-bold" onClick={() => handleDeleteOrder(food._id)} />
-                                        </th>
-                                        <td>
-                                            <div>
-                                                <div className="font-bold">{food.foodName}</div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <h3>{food.price}</h3>
-                                        </td>
-                                        <td>
-                                            <h3>{food.buyerEmail}</h3>
-                                        </td>
-                                        <td>
-                                            <h3>{food.date}</h3>
-                                        </td>
-                                    </tr>
-                                </tbody>
+                    {
+                        (orders.length > 0) ? <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <HiXCircle className="text-lg font-bold" />
+                                    </th>
+                                    <th className="text-lg font-bold">Food Name</th>
+                                    <th className="text-lg font-bold">Price</th>
+                                    <th className="text-lg font-bold">Buyer</th>
+                                    <th className="text-lg font-bold">date</th>
+                                </tr>
+                            </thead>
+                            {
+                                orders?.map(food => <>
+                                    {/* head */}
+                                    <tbody>
+                                        {/* row 1 */}
+                                        <tr>
+                                            <th>
+                                                <HiXCircle className="text-lg font-bold" onClick={() => handleDeleteOrder(food._id)} />
+                                            </th>
+                                            <td>
+                                                <div>
+                                                    <div className="font-bold">{food.foodName}</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h3>{food.price}</h3>
+                                            </td>
+                                            <td>
+                                                <h3>{food.buyerEmail}</h3>
+                                            </td>
+                                            <td>
+                                                <h3>{food.date}</h3>
+                                            </td>
+                                        </tr>
+                                    </tbody>
 
-                            </>) : <Lottie className=" flex justify-center mx-auto" animationData={NoData} loop={true} />
-                        }
-                    </table >
+                                </>)
+                            }
+                        </table > : <Lottie className=" flex justify-center mx-auto" animationData={NoData} loop={true} />
+                    }
+
                     <ToastContainer
                         position="top-center"
                         autoClose={5000}

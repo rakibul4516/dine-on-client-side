@@ -65,7 +65,7 @@ const SignUp = () => {
     return (
         <div>
             <Helmet>
-                <title>Register form</title>
+                <title>DineOn | Register form</title>
             </Helmet>
             <form onSubmit={handleUserRegister} className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
                 <div className="relative flex items-center mt-8">

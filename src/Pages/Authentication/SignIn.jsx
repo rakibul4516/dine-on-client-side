@@ -46,7 +46,7 @@ const SignIn = () => {
     return (
         <div>
             <Helmet>
-                <title>Login form</title>
+                <title>DineOn | Login form</title>
             </Helmet>
             <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
                 <form onSubmit={handleUserLogin} className="mt-6">

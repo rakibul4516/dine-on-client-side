@@ -35,7 +35,7 @@ const AddFoodItem = () => {
     return (
         <div>
             <Helmet>
-                <title>Add food item</title>
+                <title>DineOn | Add food item</title>
             </Helmet>
             <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
                 <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Add Your Foods</h2>

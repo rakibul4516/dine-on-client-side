@@ -57,7 +57,7 @@ const PurcheseFood = () => {
     return (
         <div>
             <Helmet>
-                <title>Purchese food</title>
+                <title>DineOn | Purchese food</title>
             </Helmet>
             <div className="md:grid md:grid-cols-3 w-full mx-auto items-center">
                 <img src="https://i.ibb.co/Np1qdyK/img-02.jpg" alt="food image" className="w-full h-full max-md:hidden" />

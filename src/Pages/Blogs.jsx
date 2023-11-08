@@ -4,7 +4,7 @@ const Blogs = () => {
     return (
         <div className="w-9/12 mx-auto py-10 dark:text-slate-50">
             <Helmet>
-                <title>Blogs page</title>
+                <title>DineOn | Blogs page</title>
             </Helmet>
             <div className="shadow-md p-6 dark:bg-slate-700">
                 <div className="">

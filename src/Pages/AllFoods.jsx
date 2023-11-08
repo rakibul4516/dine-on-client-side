@@ -40,7 +40,7 @@ const AllFoods = () => {
     return (
         <div>
             <Helmet>
-                <title>All food menu</title>
+                <title>DineOn | All food menu</title>
             </Helmet>
             <div className="">
                 <div className="w-10/12 mx-auto py-10">

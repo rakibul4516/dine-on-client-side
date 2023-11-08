@@ -7,7 +7,7 @@ const FoodDetails = () => {
     return (
         <div className="py-10 ">
             <Helmet>
-                <title>Food details</title>
+                <title>DineOn | Food details</title>
             </Helmet>
             <div className="lg:w-10/12 w-11/12 mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
                 <img className="object-cover w-full h-full lg:h-96" src={image} alt="Article" />
