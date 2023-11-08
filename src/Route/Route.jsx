@@ -28,7 +28,7 @@ const Route = createBrowserRouter([
             {
                 path: 'allfoods',
                 element: <AllFoods />,
-                loader: () => fetch('https://dine-on-server.vercel.app/api/v1/countdata')
+                loader: () => fetch('http://localhost:5000/api/v1/countdata')
             },
             {
                 path: 'blogs',
@@ -57,19 +57,19 @@ const Route = createBrowserRouter([
                 element: <ProtectedRoute>
                     <PurcheseFood />
                 </ProtectedRoute>,
-                loader: ({ params }) => fetch(`https://dine-on-server.vercel.app/api/v1/allfoods/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/allfoods/${params.id}`)
             },
             {
                 path: 'edit/:id',
                 element: <ProtectedRoute>
                     <UpdateFoods />
                 </ProtectedRoute>,
-                loader: ({ params }) => fetch(`https://dine-on-server.vercel.app/api/v1/allfoods/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/allfoods/${params.id}`)
             },
             {
                 path: 'details/:id',
                 element: <FoodDetails />,
-                loader: ({ params }) => fetch(`https://dine-on-server.vercel.app/api/v1/allfoods/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/allfoods/${params.id}`)
             },
             {
                 path: '/',
