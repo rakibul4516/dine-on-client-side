@@ -6,7 +6,7 @@ const Blogs = () => {
             <Helmet>
                 <title>Blogs page</title>
             </Helmet>
-            <div className="shadow-md p-6">
+            <div className="shadow-md p-6 dark:bg-slate-700">
                 <div className="">
                     <h1 className="text-2xl font-semibold font-[Suranna]">What is One way data binding?</h1>
                 </div>
@@ -23,7 +23,7 @@ const Blogs = () => {
                     </p>
                 </div>
             </div>
-            <div className="shadow-md p-6">
+            <div className="shadow-md p-6 dark:bg-slate-700">
                 <div className="">
                     <h1 className="text-2xl font-semibold font-[Suranna]">What is NPM in node.js?</h1>
                 </div>
@@ -33,7 +33,7 @@ const Blogs = () => {
                     </p>
                 </div>
             </div>
-            <div className="shadow-md p-6">
+            <div className="shadow-md p-6 dark:bg-slate-700">
                 <div className="py-2">
                     <h1 className="text-2xl font-semibold font-[Suranna]">Different between Mongodb database vs mySQL database</h1>
                 </div>
