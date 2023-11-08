@@ -44,7 +44,7 @@ const AllFoods = () => {
             <Helmet>
                 <title>DineOn | All food menu</title>
             </Helmet>
-            <div className="flex w-10/12 mx-auto py-10 justify-between items-center">
+            <div className="flex lg:w-10/12 w-11/12 mx-auto py-10 gap-2 justify-between items-center">
                 <div className="">
                     <fieldset className="w-full space-y-1 dark:text-gray-100">
                         <label className="hidden">Search</label>
