@@ -2,13 +2,12 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from "../firebase.config";
-import axios from "axios";
-// import AxiosData from "../Axios/AxiosData";
+import AxiosData from "../Axios/AxiosData";
 
 
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
-    // const axios = AxiosData()
+    const axios = AxiosData()
     const [users, setUsers] = useState()
     const [loading, setLoading] = useState(true)
 
@@ -43,13 +42,13 @@ const AuthProvider = ({ children }) => {
 
             // if user exists then issue a token
             if (user) {
-                axios.post('http://localhost:5000/api/v1/jwt', loggedUser,{withCredentials:true})
+                axios.post('/jwt', loggedUser)
                     .then(res => {
                         console.log('token response', res.data)
                     })
             }
             else {
-                axios.post('http://localhost:5000/api/v1/logout', loggedUser,{withCredentials:true})
+                axios.post('/logout', loggedUser)
                 .then(res => {
                     console.log('logout',res.data)
                 })
@@ -58,7 +57,7 @@ const AuthProvider = ({ children }) => {
                 unSubscribe()
             }
         })
-    }, [users?.email])
+    }, [users?.email,axios])
 
 
     const authInfo = {
