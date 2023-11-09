@@ -30,7 +30,7 @@ const PurcheseFood = () => {
         const userName = form.userName.value;
         const buyerEmail = form.userEmail.value;
         const date = form.date.value;
-        const purcheseData = { foodName, price, foodQuantity, userName, buyerEmail, date }
+        const purcheseData = { foodName, price, foodQuantity, userName, buyerEmail, date,image }
         console.log(purcheseData)
 
         //Post ordered data to server 
@@ -45,7 +45,7 @@ const PurcheseFood = () => {
                     axios.put(`/foods/${_id}`, updatedata)
                         .then(res => {
                             if (res.data.modifiedCount == 1) {
-                                toast('order and quentity changes')
+                                toast('Purchase Successfully')
                             }
                         })
                 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import AxiosData from "../Axios/AxiosData";
 import Lottie from "lottie-react";
 import loadingdata from '../../public/loadingdata.json'
+import { motion } from "framer-motion"
 const TopFoods = () => {
     const axios = AxiosData()
     const [topFoodData, setTopFoodData] = useState([])
@@ -29,7 +30,7 @@ const TopFoods = () => {
                 {
                     topFoodData.slice(0, 6)?.map((food, idx) => (
                         <div key={idx} className="flex flex-col items-center justify-center w-full  mx-auto">
-                            <div className="w-full h-64"><img src={food.image} alt="" className="w-full h-64 bg-gray-300  object-cover rounded-lg shadow-md" /></div>
+                            <motion.div whileHover={{ scale: 1.2 }} className="w-full h-64"><img src={food.image} alt="" className="w-full h-64 bg-gray-300  object-cover rounded-lg shadow-md" /></motion.div>
 
                             <div className="w-56 -mt{-10 overflow-hidden bg-white rounded-lg shadow-lg md:}w-64 dark:bg-gray-800 -mt-10">
                                 <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white font-[Suranna]">{food.foodName}</h3>
@@ -40,7 +41,7 @@ const TopFoods = () => {
                                     </div>
                                     <div className="flex items-center justify-between px-3">
                                         <span className="font-bold text-gray-800 dark:text-gray-200">${food.price}</span>
-                                        <Link to={`/details/${food._id}`} className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Details</Link>
+                                        <Link to={`/details/${food._id}`} className="px-2 py-1 text-xs font-semibold text-white uppercase bg-orange-500 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Details</Link>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +51,9 @@ const TopFoods = () => {
                 }
             </div>
             <div className="py-10 flex items-center justify-center">
-                <Link to='/allfoods' className="px-3 py-2 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">SHOW MORE</Link>
+                <motion.div whileHover={{ scale: 0.9 }} className="">
+                    <Link to='/allfoods' className="px-3 py-2 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-orange-500 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">SHOW MORE</Link>
+                </motion.div>
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ import { useContext, useState } from 'react';
 import { HiMoon, HiSun } from 'react-icons/hi2';
 import { AuthContext } from '../Auth/AuthProvider';
 import ThemeContext from '../Contexts/ThemeContext';
-
+import "../index.css"
 const Navbar = () => {
     const { users, signoutUser } = useContext(AuthContext)
     const [isDropdown, setIsDropdown] = useState(false);
@@ -12,10 +12,10 @@ const Navbar = () => {
     const { theme, setTheme } = useContext(ThemeContext)
 
     const navitems = <>
-        <div className="flex md:flex-row flex-col lg:gap-3 md:gap-1 max-sm:gap-2 items-center  font-semibold">
-            <NavLink to='/' className='activeclass py-2 lg:px-4 px-2 hover:hover:bg-orange-300 text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Home</NavLink>
-            <NavLink to='allfoods' className='activeclass py-2 lg:px-4 px-2 hover:hover:bg-orange-300 text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'> All Food Items</NavLink>
-            <NavLink to='blogs' className='activeclass py-2 lg:px-4 px-2 hover:hover:bg-orange-300 text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Blogs</NavLink>
+        <div className=" menu flex md:flex-row flex-col lg:gap-3 md:gap-1 max-sm:gap-2 items-center  font-semibold">
+            <NavLink to='/' className='activeroute py-2 lg:px-4 px-2 hover:hover:bg-orange-400 text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Home</NavLink>
+            <NavLink to='allfoods' className='activeroute py-2 lg:px-4 px-2 hover:hover:bg-orange-400 text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'> All Food Items</NavLink>
+            <NavLink to='blogs' className='activeroute py-2 lg:px-4 px-2 hover:hover:bg-orange-400 text-md font-semibold dark:text-white text-black rounded-lg bg-transparent'>Blogs</NavLink>
         </div>
     </>
 
@@ -31,7 +31,7 @@ const Navbar = () => {
         <nav className="shadow dark:bg-gray-900 bg-transparent  relative">
             <div className="w-full flex flex-wrap items-center justify-between mx-auto p-4">
                 <div className="flex items-center">
-                    <img src="https://i.ibb.co/6WY9fg4/logo.png" alt="" className='h-16 w-20' />
+                    <img src="https://i.ibb.co/6WY9fg4/logo.png" alt="" className='h-16 w-24' />
                 </div>
 
                 <div className="flex items-center md:order-2 gap-4 ">
@@ -56,16 +56,16 @@ const Navbar = () => {
                             >
                                 <div className="px-4 py-3">
                                     <ul className="flex flex-col">
-                                        <NavLink to='myaddedfood' className="hover:bg-orange-300 dark:text-white text-lg font-semibold px-3 py-2 rounded-md">My added food items</NavLink>
-                                        <NavLink to='addfooditem' className="hover:bg-orange-300 dark:text-white text-lg font-semibold px-3 py-2 rounded-md">Add a food item</NavLink>
-                                        <NavLink to='myorders' className="hover:bg-orange-300 dark:text-white text-lg font-semibold px-3 py-2 rounded-md">My ordered food items</NavLink>
+                                        <NavLink to='myaddedfood' className="activeroute hover:bg-[#F4BF96] dark:text-white text-lg font-semibold px-3 py-2 rounded-md">My added food items</NavLink>
+                                        <NavLink to='addfooditem' className="activeroute hover:bg-[#F4BF96] dark:text-white text-lg font-semibold px-3 py-2 rounded-md">Add a food item</NavLink>
+                                        <NavLink to='myorders' className="activeroute hover:bg-[#F4BF96] dark:text-white text-lg font-semibold px-3 py-2 rounded-md">My ordered food items</NavLink>
                                     </ul>
                                 </div>
                                 <ul className="py-2">
                                     <li>
                                         <a onClick={HandelLogout}
                                             href="#"
-                                            className="py-2 lg:px-4 px-2 hover:bg-orange-300 text-md font-semibold text-black rounded-lg w-full"
+                                            className="py-2 lg:px-4 px-2 hover:bg-orange-400 text-md font-semibold text-black rounded-lg w-full"
                                         >
                                             Sign out
                                         </a>
@@ -73,7 +73,7 @@ const Navbar = () => {
                                 </ul>
                             </div>
                         </div>
-                            : <NavLink to='/signin' className='activeclass py-2 lg:px-4 px-2 dark:text-white hover:bg-orange-600 text-md font-semibold text-black rounded-lg bg-transparent'>Login</NavLink>
+                            : <NavLink to='/signin' className='activeclass py-2 lg:px-4 px-2 dark:text-white hover:bg-orange-400 text-md font-semibold text-black rounded-lg bg-transparent'>Login</NavLink>
 
                     }
                     {/* small Dropdown menu */}

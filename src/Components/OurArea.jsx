@@ -25,7 +25,7 @@ const OurArea = () => {
             <div className="overflow-hidden bg-white dark:bg-gray-900 lg:mx-8 flex lg:flex-row-reverse lg:items-center flex-col">
                 <div className="lg:w-1/2">
                     <div className=" bg-cover lg:h-full">
-                        <img src="https://i.ibb.co/SccXwdc/img-06.jpg" alt="" className="rounded-md w-full h-[100vh] object-cover" />
+                        <img src="https://i.ibb.co/SccXwdc/img-06.jpg" alt="" className="rounded-md w-full lg:h-[100vh] h-[60vh] object-cover" />
                     </div>
                 </div>
 
