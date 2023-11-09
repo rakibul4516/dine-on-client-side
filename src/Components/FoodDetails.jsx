@@ -16,7 +16,7 @@ const FoodDetails = () => {
                     <div className="lg:pr-10">
                         <div className="flex items-center justify-between">
                             <span className="text-lg font-medium text-blue-600 uppercase dark:text-blue-400">{category}</span>
-                            <span className="block mt-2 text-3xl font-[Suranna] font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 ">Qty: {quantity}</span>
+                            <span className="block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 ">Qty: {quantity}</span>
                             <h3 className="mx-2 text-2xl font-bold text-gray-700 dark:text-gray-200" role="link">${price}</h3>
                         </div>
                         <div className="flex justify-between items-center flex-wrap gap-3">

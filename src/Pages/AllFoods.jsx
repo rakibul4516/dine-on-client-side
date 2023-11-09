@@ -10,7 +10,7 @@ const AllFoods = () => {
     const [foods, setFoods] = useState()
     const [currentPage, setCurrentPage] = useState(0)
     const [search, setSearch] = useState('');
-    const [catagory, setCategory] = ('')
+    const [category, setCategory] = useState('')
     //Pagination 
     const { count } = useLoaderData()
     const limit = 9;
@@ -31,14 +31,17 @@ const AllFoods = () => {
     }
     //Fetch data 
     useEffect(() => {
-        axios.get(`/allfoods?search=${search}&page=${currentPage}&limit=${limit}&category=${catagory}`)
+        axios.get(`/allfoods?search=${search}&category=${category}&page=${currentPage}&limit=${limit}`)
             .then((res) => {
                 setFoods(res.data);
             })
-    }, [currentPage, search, axios])
+    }, [currentPage, search, axios, category])
 
     //find by catagory
-
+    const handleCategory = (e) => {
+        const selectedCategory = e.target.value;
+        setCategory(selectedCategory);
+    }
     return (
         <div>
             <Helmet>
@@ -60,11 +63,11 @@ const AllFoods = () => {
                     </fieldset>
                 </div>
                 <div>
-                    <select onChange={(e) => setCategory(e.target.value)} name="category" className=" block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
-                        <option disabled selected>Select your food category</option>
+                    <select onChange={handleCategory} name="category" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                        <option value=''>Filter by category</option>
                         <option value="pizza">Pizza</option>
                         <option value="Pasta">Pasta</option>
-                        <option value="Burgers">Barger</option>
+                        <option value="Burgers">Burger</option>
                         <option value="Sandwiches">Sandwiches</option>
                         <option value="Steak">Steak</option>
                         <option value="Seafood">Seafood</option>
