@@ -5,7 +5,7 @@ const OurArea = () => {
             <div className=" mb-11 bg-white dark:bg-gray-900 lg:mx-8 flex lg:flex-row lg:items-center flex-col">
                 <div className="lg:w-1/2">
                     <div className=" bg-cover lg:h-full">
-                        <img src="https://i.ibb.co/ZN4QSzH/img-04.jpg" alt="" className="rounded-md w-full h-[100vh] object-cover" />
+                        <img src="https://i.ibb.co/ZN4QSzH/img-04.jpg" alt="" className="rounded-md w-full lg:h-[100vh] h-[60vh] object-cover" />
                     </div>
                 </div>
 
