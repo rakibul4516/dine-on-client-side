@@ -38,7 +38,8 @@ const Navbar = () => {
                     {theme === 'light' ? <HiMoon className='text-4xl cursor-pointer' onClick={() => { setTheme('dark'); localStorage.setItem('theme', 'dark') }} /> : <HiSun className='text-4xl cursor-pointer text-white' onClick={() => { setTheme('light'); localStorage.setItem('theme', 'light') }} />}
 
                     {
-                        users ? <div className="">
+                        users ? 
+                        <div className="">
                             <button
                                 type="button"
                                 className="flex mr-3 text-sm bg-black rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"

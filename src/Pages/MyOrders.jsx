@@ -9,6 +9,7 @@ import shoping from '../../public/shoping cart.json'
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion"
 import { AiFillDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const MyOrders = () => {
     const axios = AxiosData()
     const [orders, setOrders] = useState()
@@ -21,6 +22,9 @@ const MyOrders = () => {
                     setOrders(res.data);
                 }),
     });
+
+    //count total price 
+    const totalPrice = orders?.reduce((preTotalPrice, newPrice) => preTotalPrice + parseFloat(newPrice?.price), 0)
     //Delete order
     const handleDeleteOrder = (id) => {
         axios.delete(`/myorders/${id}`)
@@ -47,6 +51,13 @@ const MyOrders = () => {
                     <div className=" py-10">
                         <div className="">
                             <h1 className="text-3xl font-bold font-[Suranna]">Your Orders</h1>
+                        </div>
+                        <div className="flex justify-between gap-5 items-center py-5">
+                            <h1 className="text-2xl font-bold font-[Suranna]">Total Price: ${totalPrice}</h1>
+                            {
+                                (orders.length > 0) ? <Link to='/payment' className="px-4 py-2 text-white transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Cheakout</Link> :
+                                    <Link to='/payment' className="px-4 py-2 text-white transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 disabled">Cheakout</Link>
+                            }
                         </div>
                         {
                             (orders.length > 0) ?

@@ -14,6 +14,7 @@ import UpdateFoods from "../Pages/UpdateFoods";
 import FoodDetails from "../Components/FoodDetails";
 import PurcheseFood from "../Components/PurcheseFood";
 import ErrorElement from "../Components/ErrorElement";
+import Payment from "../Pages/Payment/Payment";
 
 const Route = createBrowserRouter([
     {
@@ -50,6 +51,12 @@ const Route = createBrowserRouter([
                 path: 'myorders',
                 element: <ProtectedRoute>
                     <MyOrders />
+                </ProtectedRoute>,
+            },
+            {
+                path: 'payment',
+                element: <ProtectedRoute>
+                    <Payment/>
                 </ProtectedRoute>,
             },
             {
